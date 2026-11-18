@@ -9,8 +9,6 @@ from pretix.base.models import SeatCategoryMapping
 from pretix.control.signals import nav_event, nav_organizer
 from pretix.presale.signals import render_seating_plan
 
-INTERNAL_BUILD_ID = "2"
-
 SEAT_ICON = (
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" '
     'class="svg-icon"><path d="M64 64a32 32 0 0 0-32 32v160a32 32 0 0 0 '
@@ -205,7 +203,6 @@ def render_seating_plan_receiver(sender, request, **kwargs):
         "categories_json": json.dumps(categories),
         "areas_json": json.dumps(_areas(plan)),
         "has_seats": len(seats) > 0,
-        "build_id": INTERNAL_BUILD_ID,
         # Hide the category legend/filter when there is only one category.
         "show_categories": len(categories) > 1,
         "max_per_order": max_per_order,

@@ -7,13 +7,6 @@
     align-items: flex-start;
 }
 
-.seatingsale-build {
-    margin-top: 6px;
-    color: #888888;
-    font-size: 11px;
-    text-align: right;
-}
-
 .seatingsale-mapwrap {
     flex: 1 1 380px;
     min-width: 0;
